@@ -1,0 +1,39 @@
+/* Styles for DistoX + TopoDroid */
+body {
+  font-family: Helvetica, sans-serif;
+  }
+  
+span.def {
+  font-weight: bold;
+  /*font-variant: small-caps;*/
+}
+
+table {
+  border-collapse: collapse;
+  padding: 10%;
+  border: 1px solid gray;
+}
+
+h3 {
+  font-size: 110%;
+  color: #444;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+h1 {
+  font-size: 140%;
+  text-align: center;
+}
+
+.autor {
+  font-size: 85%;
+  text-align: left;
+}
+
+.version {
+  font-size: 85%;
+  text-align: left;
+}
