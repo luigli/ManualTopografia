@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar tema 10",
+            "type": "shell",
+            "command": "markdown-it 10-introduccion.md -o xhtml/10-introduccion.xhtml",
+            "problemMatcher": []
+        },
+        {
+            "label": "Compilar tema 20",
+            "type": "shell",
+            "command": "markdown-it 20-entorno.md -o xhtml/20-entorno.xhtml",
+            "problemMatcher": []
+        },
+        {
+            "label": "Compilar tema 30",
+            "type": "shell",
+            "command": "markdown-it 30-glosario.md -o xhtml/30-glosario.xhtml",
+            "problemMatcher": []
+        },
+        {
+            "label": "Compilar tema 40",
+            "type": "shell",
+            "command": "markdown-it 40-teclas.md -o xhtml/40-teclas.xhtml",
+            "problemMatcher": []
+        },
+        {
+            "label": "Compilar tema 50",
+            "type": "shell",
+            "command": "markdown-it 50-reseteo.md -o xhtml/50-reseteo.xhtml",
+            "problemMatcher": []
+        },
+        {
+            "label": "Compilar tema 60",
+            "type": "shell",
+            "command": "markdown-it 60-pantalla.md -o xhtml/60-pantalla.xhtml",
+            "problemMatcher": []
+        },
+        {
+            "label": "Compilar tema 70",
+            "type": "shell",
+            "command": "markdown-it 70-configuracion-distox.md -o xhtml/70-configuracion-distox.xhtml",
+            "problemMatcher": []
+        },
+    ]
+}

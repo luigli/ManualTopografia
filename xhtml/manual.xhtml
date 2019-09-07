@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='es' xml:lang='es'>
+<head>
+	<link href='styles.css' rel='stylesheet' type='text/css'/>
+	<title>DistoX + TopoDroid</title>
+</head>
+<body>
+
+<h1>DistoX + TopoDroid</h1>
+<p>Luis Iglesias - Espeleoclub Aradelas - Vigo</p>
+<p>Versión 0.85 - Octubre 2018</p>
+<div><img height="200" width="200" alt="Imagen" src="img/topoDroidTransparente.png"/></div>
+<p>Este es un pequeño documento en el que intentaremos dar una idea general tanto del dispositivo <strong>DistoX</strong> como de la aplicación <strong>TopoDroid</strong> y mostrar un esquema de funcionamiento para elaborar topografías utilizándolos conjuntamente.</p>
+<p>No es, ni pretende ser, un manual exhaustivo. Para conocer a fondo las posibilidades tanto del DistoX como de TopoDroid recomendamos acudir a guías de referencia.</p>
+<p>Sí se aconseja <strong>leer de principio a fin todo este documento, sin saltarse contenido</strong>, para tener los ajustes recomendados y que sea más fácil seguir el desarrollo de la guía. Posteriormente el usuario podrá realizar los cambios que considere.</p>
+<h1>Entorno de trabajo</h1>
+<p>Este documento ha sido elaborado con</p>
+<ul>
+<li>Disto X310
+<ul>
+<li>Versión HW 1.0</li>
+<li>Versión FW 2.5</li>
+</ul>
+</li>
+<li>TopoDroid
+<ul>
+<li>Versión 4.1.0c (julio 2018)</li>
+</ul>
+</li>
+</ul>
+<h1>Glosario</h1>
+<p><strong>Estación</strong>: Cada uno de los puntos base que se establecen en la topografía. Desde cada estación se hacen mediciones radiales y también se hacen mediciones que unen estaciones.</p>
+<p><strong>Estación activa</strong>: Es la estación desde la que se va a tomar la medición actual. Hay que recordar que ni DistoX ni TopoDroid tienen forma de saber automáticamente desde qué punto (estación) se está tomando la medida. Hay métodos como el del triple-disparo que pueden ayudar. Pero si no lo empleamos, entonces deberíamos indicar manualmente cuál es la estación [desde] y la estación [hasta] de cada toma.</p>
+<p><strong>Visual</strong>: Llamamos visual a la medición que hacemos de una estación a otra estación.</p>
+<p><strong>Radial</strong>: Llamamos radial a cada una de las mediciones que hacemos desde una estación hacia paredes, techos u otros puntos de interés a nuestro alrededor.</p>
+<h1>Teclas del DistoX</h1>
+<p>A continuación se hace una referencia rápida de las teclas del DistoX que vamos a usar en esta guía. En algunos casos se podrá encontrar más adelante una descripción de las funciones con mayor detalle.</p>
+<table>
+<thead>
+<tr>
+<th>Tecla</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="img/teclaOn.png" alt="img" /></td>
+<td>Enciende el Disto / Enciende el puntero láser / Realiza la medición</td>
+</tr>
+<tr>
+<td><img src="img/teclaOff.png" alt="img" /></td>
+<td>Cancela la operación / Apaga el láser / Si la mantenemos pulsada apaga el Disto</td>
+</tr>
+<tr>
+<td><img src="img/teclaFunc.png" alt="img" /></td>
+<td>Estado del dispositivo: nivel de carga de las pilas, versiones de hardware y firmware instaladas, nivel de iluminación de la pantalla. Se sale de esta pantalla con <img src="img/teclaOff.png" alt="img" /></td>
+</tr>
+<tr>
+<td><img src="img/teclaTimer.png" alt="img" /></td>
+<td>Configura el disparo retardado en el tiempo. Esto puede ser útil para realizar tomas más precisas al evitar la vibración del dedo cuando se ejecuta la medición</td>
+</tr>
+</tbody>
+</table>
+<p>Las siguientes combinaciones de teclas deben mantenerse pulsadas <strong>durante 2 segundos</strong> hasta que suene un pitido y se active la función.</p>
+<table>
+<thead>
+<tr>
+<th>Combinación de teclas</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="img/teclaOff.png" alt="img" /></td>
+<td>Apaga el Disto</td>
+</tr>
+<tr>
+<td><img src="img/teclaFunc.png" alt="img" /> + <img src="img/teclaUnits.png" alt="img" /></td>
+<td>Activa / desactiva el <a href="#ModoSilencioso">modo silencioso</a></td>
+</tr>
+<tr>
+<td><img src="img/teclaRef.png" alt="img" /> + <img src="img/teclaMenos.png" alt="img" /></td>
+<td>Apaga / enciende el sonido. Por ejemplo el pitido que se escucha cuando se hace una medición o se encienden y apagan funciones del dispositivo.</td>
+</tr>
+<tr>
+<td><img src="img/teclaRef.png" alt="img" /> + <img src="img/teclaMas.png" alt="img" /></td>
+<td>Enciende / apaga la iluminación de la pantalla. Se desaconseja totalmente mantener la pantalla iluminada por el importante gasto de pilas que supone</td>
+</tr>
+<tr>
+<td><img src="img/teclaSmart.png" alt="img" /> + <img src="img/teclaUnits.png" alt="img" /></td>
+<td>Cambia la medición de rumbo entre grados sexagesimales (0 - 360) y grados centesimales (0 - 400)</td>
+</tr>
+<tr>
+<td><img src="img/teclaUnits.png" alt="img" /> + <img src="img/teclaMenos.png" alt="img" /></td>
+<td>Activa / desactiva la medición inversa (como si se estuviese haciendo la toma desde el destino hacia el origen</td>
+</tr>
+<tr>
+<td><span id="BorrarPuntosNoEnviados" /> <img src="img/teclaOff.png" alt="img" /> + <img src="img/teclaUnits.png" alt="img" /></td>
+<td>Limpiar la memoria de mediciones no enviadas. Ver <a href="#medicionesNoEnviadas">mediciones pendientes de enviar</a></td>
+</tr>
+<tr>
+<td><img src="img/teclaFunc.png" alt="img" /> + <img src="img/teclaOff.png" alt="img" /></td>
+<td>Encender / apagar <a href="#BlueTooth">Bluetooth</a></td>
+</tr>
+<tr>
+<td><img src="img/teclaOff.png" alt="img" /> + <img src="img/teclaMenos.png" alt="img" /></td>
+<td>Bloquear el Disto para impedir que se encienda con una simple pulsación de la tecla <img src="img/teclaOn.png" alt="img" />. Esto puede ser útil para evitar gasto de la batería si se lleva el Disto en una saca con la posibilidad de que se pulse la tecla de encendido</td>
+</tr>
+<tr>
+<td><img src="img/teclaSmart.png" alt="img" /> + <img src="img/teclaMenos.png" alt="img" /></td>
+<td>Activar / desactivar el <a href="#fnModoTripleDisparo">modo triple-disparo</a></td>
+</tr>
+</tbody>
+</table>
+<h1>Reseteo de fábrica</h1>
+<p>Para hacer un reseteo completo se deben pulsar las teclas <img src="img/teclaFunc.png" alt="img" /> + <img src="img/teclaOff.png" alt="img" /> + <img src="img/teclaUnits.png" alt="img" /> durante 5 segundos. Esto implica el borrado de la memoria de las mediciones, volver los ajustes a las opciones de fábrica y anular la calibración.</p>
+<h2>Pantalla del DistoX</h2>
+<p>Elementos que debemos tener en cuenta en la pantalla de nuestro DistoX.</p>
+<h3><span id="PuntoDeReferencia"/> Punto de referencia de medición</h3>
+<p>El <strong>punto de referencia de medición</strong> es la parte del Disto desde la que el aparato mide la distancia. La que nos interesará generalmente es la parte trasera (las más cercada al botón <img src="img/teclaOff.png" alt="img" />, pero también hay posibilidad de medir desde la parte delantera (la más cercana a la pantalla) o desde el trípode en caso de que lo fijemos sobre uno para facilitar las mediciones. La información del punto de referencia se muestra en la parte superior izquierda y según la variemos cambiará el icono en la pantalla.</p>
+<p><img src="img/referenciaMedicion.png" alt="img" /></p>
+<p>Para cambiar el valor pulsaremos las tecla <img src="img/teclaRef.png" alt="img" />, lo que hará que varíe entre posición trasera, posición delantera y trípode, hasta que el icono en pantalla muestre el valor deseado.</p>
+<p><strong>Nota</strong>: hay que tener en cuenta que, al menos en la versión actual, después de cada encendido siempre se coloca en la opción por defecto, que es la de la parte trasera.</p>
+<h3><span id="BlueTooth"/> Bluetooth</h3>
+<p>En la parte superior deberíamos ver el icono de Bluetooth, lo que indica que la comunicación entre DistoX y el móvil o tablet va a poder establecerse.</p>
+<p><img src="img/bluetooth.png" alt="img" /></p>
+<p>Para activar / desactivar Bluetooth pulsaremos al mismo tiempo las teclas <img src="img/teclaFunc.png" alt="img" /> y <img src="img/teclaOff.png" alt="img" /> durante unos 2 segundos hasta que suene un pitido y veamos aparecer / desaparecer el icono en pantalla.</p>
+<h3><span id="ModoSilencioso"/>Modo silencioso</h3>
+<p>Si en la parte superior derecha del Disto observamos 3 puntos, tal como se muestra a continuación</p>
+<p><img src="img/modoSilencioso.png" alt="img" /></p>
+<p>significa que lo tenemos configurado en <strong>modo silencioso</strong>. Esto no tiene que ver con el sonido del aparato, sino con que en este modo las tomas de medición se almacenan en la memoria pero no se enviarán a TopoDroid. Esta es una condición <strong>no deseada</strong>; la indicamos aquí para prevenir errores o que pensemos que el Disto se ha estropeado.
+Para activar / desactivar el modo silencioso pulsaremos al mismo tiempo las teclas <img src="img/teclaFunc.png" alt="img" /> y <img src="img/teclaUnits.png" alt="img" /> durante unos 2 segundos hasta que suene un pitido y veamos aparecer / desaparecer los 3 puntos en pantalla.</p>
+<h3><span id="medicionesNoEnviadas"/> Mediciones pendientes de enviar al dispositivo</h3>
+<p>En modo de funcionamiento normal, es decir, si no estamos en <a href="#ModoSilencioso">modo silencioso</a>, la parte superior derecha indica la cantidad de mediciones que están pendientes de enviar al dispositivo con TopoDroid. Si está en blanco significa que no hay nada pendiente. En la siguiente imagen vemos que hay 6 mediciones pendientes de enviar a TopoDroid. Más adelante veremos cómo es la transmisión de datos entre DistoX y TopoDroid.</p>
+<p><img src="img/puntosPendientes.png" alt="img" /></p>
+<h3>Carga de las pilas</h3>
+<p>En la parte superior central se representa la carga de las pilas, tal como se ve en la imagen adjunta. Recordamos la necesidad de calibrar el DistoX después de reemplazar las pilas.</p>
+<p><img src="img/cargaPilas.png" alt="img" /></p>
+<h3>Rumbo e inclinación</h3>
+<p>Los dos valores de la zona central de la pantalla son el rumbo o azimut (valor superior) e inclinación (valor inferior). En caso de que estemos midiendo en grados sexagesimales, que es la opción de fábrica, el rumbo tendrá valores entre 0 y 360 grados. La inclinación varía entre 90º cuando el Disto está en vertical apuntando hacia arriba y -90º cuando el Disto está en vertical apuntando hacia abajo. Según la imagen adjunta, el rumbo es de 71,8º y la inclinación de 23º.</p>
+<p><img src="img/rumboyclino.png" alt="img" /></p>
+<h3>Distancia al objeto marcado por el puntero</h3>
+<p>Cada vez que el Disto hace una medición, muestra en la parte inferior de la pantalla la distancia al objeto seleccionado. Hay que tener en cuenta que mientras el puntero láser está encendido no indica la distancia y en esa parte de la pantalla aparecerán 3 rayas horizontales. El valor de distancia tras la última medición, según se muestra en la pantalla adjunta, es de 4,345 metros.</p>
+<p><img src="img/distancia.png" alt="img" /></p>
+<h1>Configuración de DistoX</h1>
+<p>El primer requisito para utilizar el DistoX con garantías es tenerlo calibrado. Se recomienda hacerlo al menos después de un cambio de pilas, cuando se actualiza el firmware o cada cierto tiempo. Se ha comprobado que incluso una ligera rotación interna de las pilas en el zócalo del DistoX afecta a la brújula. Por eso lo recomendable sería intentar fijarlas y hacer una calibración antes de cada sesión de topografía (es un proceso que lleva unos 10 minutos).</p>
+<p>Hay varios manuales en los que se detalla esta operación; aquí veremos la calibración desde la aplicación TopoDroid.</p>
+<h2><span id="Timer"/> Medición con retardo</h2>
+<p>El Disto ofrece la posibilidad de hacer mediciones más precisas eliminando el efecto de vibración de la mano cuando pulsamos la tecla de disparo. Esto se consigue con el disparo retardado. Veamos como se configura:</p>
+<h3>Configuración del tiempo de retardo</h3>
+<p>Con el Disto encendido pulsamos <img src="img/teclaOff.png" alt="img" /> para asegurarnos de que el láser está apagado. A continuación pulsamos <img src="img/teclaTimer.png" alt="img" /> y en la parte inferior de la pantalla veremos el tiempo de retardo configurado, que por defecto es de 5 segundos. Para cambiar este valor usaremos las teclas <img src="img/teclaMas.png" alt="img" /> y <img src="img/teclaMenos.png" alt="img" />. Aconsejamos pulsar dos veces la tecla <img src="img/teclaMenos.png" alt="img" /> para reducirlo a 3 segundos, que es un valor suficiente. Pulsamos <img src="img/teclaOff.png" alt="img" /> para salir de la configuración.</p>
+<h3>Efectuar disparos con retardo</h3>
+<p>Si ahora queremos hacer una medición con retardo encendemos el puntero láser (pulsando <img src="img/teclaOn.png" alt="img" />) y en vez de disparar pulsando de nuevo <img src="img/teclaOn.png" alt="img" /> en este caso pulsamos <img src="img/teclaTimer.png" alt="img" />. Ahora se iniciará la cuenta atrás, emitiendo un pitido por segundo, durante la que tendremos que mantener el puntero en el objetivo. Sabremos que se ha hecho la medición cuando se apaga el puntero al final de la cuenta atrás.</p>
+<h2><span id="fnModoTripleDisparo"/>Modo triple disparo</h2>
+<p>Este modo tiene ciertas ventajas para facilitar el trabajo y hacerlo más preciso. A continuación daremos los detalles.
+Sabremos que está activado si vemos un triángulo en la parte inferior izquierda de la pantalla del Disto.</p>
+<p><img src="img/pantallaTripleDisparo.png" alt="img" /></p>
+<p>Para activar / desactivar este modo pulsaremos al mismo tiempo las teclas <img src="img/teclaSmart.png" alt="img" /> y <img src="img/teclaMenos.png" alt="img" /> durante unos 2 segundos hasta que oigamos un pitido y veamos aparecer / desaparecer el triángulo en la pantalla.</p>
+<h3><span id="DescripcionTripleDisparo"/>¿Que implica el modo de triple-disparo?</h3>
+<p>En este modo, la mediciones radiales se hacen con una sola toma, como es habitual. Pero la visual a la siguiente estación deberemos hacerla con 3 disparos consecutivos que deben ser lo más parecidos posible, es decir, midiendo desde el mismo punto hacia el mismo objetivo los 3 disparos. De esta forma, si el Disto detecta que hacemos 3 tomas consecutivas que tienen entre ellas una diferencia de distancia menor de 5 cm y una diferencia de ángulos menor de 2º, entonces asume que esas 3 tomas corresponden a un cambio de estación y en ese caso hará un doble pitido y mostrará en la zona derecha de la pantalla 3 líneas verticales tal como se muestra en la siguiente imagen</p>
+<p><img src="img/IndicadorTripleDisparo.png" alt="img" /></p>
+<p>Este sistema sirve para asegurarnos de que la medición entre estaciones tiene la suficiente precisión, ya que si al realizar el tercer disparo no hace el doble pitido ni muestra las 3 líneas verticales eso quiere decir que la toma no ha sido correcta y deberemos descartarla, teniendo que volver a realizar los 3 disparos consecutivos desde la estación actual a la siguiente.</p>
+<p>Otra consecuencia derivada de un triple disparo correcto es que, a continuación, la estación activa pasará a ser automáticamente aquella a la que hemos hecho el disparo. De esta forma nos facilita la labor ya que no tenemos que cambiar nosotros a mano la estación activa. Todo esto lo veremos más adelante cuando expliquemos el método de trabajo.</p>
+<h1>Configuración de TopoDroid</h1>
+<h2>Emparejar por Bluetooth con DistoX</h2>
+<p>Es imprescindible la conexión Bluetooth entre TopoDroid y DistoX, ya que es el canal por el que se transfieren los datos. El emparejamiento se puede hacer desde el menú [<strong>Ajustes</strong>] de Android o desde el menú DistoX de TopoDroid. En cualquier caso la contraseña de emparejamiento es 0000.</p>
+<p>Desde la pantalla principal pulsamos el icono DistoX (el primero de la izquierda)</p>
+<p><img src="img/TD_MenuDistoX.png" alt="img" /></p>
+<p>En la siguiente pantalla pulsamos el botón <strong>3puntos</strong> (a la derecha) para que se despliegue el menú de <strong>escanear</strong> y <strong>emparejar</strong> dispositivos Bluetooth</p>
+<p><img src="img/TD_AjustesBT.png" alt="img" /></p>
+<p>Una vez emparejado no hará falta que volvamos a este menú cada vez. Si el Bluetooth está encendido, se restablecerá la conexión automáticamente al usar TopoDroid.</p>
+<h2>Ajustes recomendados de TopoDroid</h2>
+<p>Para acceder a los ajustes generales, desde la pantalla principal pulsamos <strong>3puntos</strong> &gt; Ajustes <div><img src="img/TD_Ajustes.png" alt="img" /> para que se abra el panel de ajustes generales</p>
+<h3>Nivel de la interfaz de usuario</h3>
+<p>TopoDroid da la posibilidad de trabajar con niveles de usuario desde <strong>Básico</strong> hasta
+<strong>Experto</strong>. El nivel <strong>Básico</strong> es el que viene por defecto y no permite todas las opciones que vamos a utilizar en este manual, así que dentro del panel de ajustes que acabamos de abrir entraremos en la opción <strong>Nivel de usuario</strong> y lo cambiaremos a <strong>Experto</strong>. La razón es que solamente en modo <strong>Experto</strong> se permiten hacer secciones transversales en una estación; una función que veremos más adelante. En cualquier caso, en nuestra opinión es mejor tener todas las funciones disponibles e ir usándolas según vayamos aprendiendo.</p>
+<h2>Ayuda de TopoDroid</h2>
+<p>En el menú <strong>3puntos</strong> que hay en la parte superior derecha de cada pantalla de TopoDroid, podemos encontrar una opción <strong>Ayuda</strong>, que nos despliega información que puede ser útil.</p>
+<p><img src="img/TD_AyudaMenu.png" alt="img" /></p>
+<p>Si pulsamos sobre el <strong>libro</strong> (señalado en rojo) detallará un poco más la información.</p>
+<p><img src="img/TD_Ayuda.png" alt="img" /></p>
+
+
+</body></html>
