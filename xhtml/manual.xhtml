@@ -1,18 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
-<html xmlns='http://www.w3.org/1999/xhtml' lang='es' xml:lang='es'>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-	<link href='styles.css' rel='stylesheet' type='text/css'/>
-	<title>DistoX + TopoDroid</title>
+  <link href="styles.css" rel="stylesheet" type="text/css"/>
+  <title>DistoX + TopoDroid</title>
 </head>
 <body>
+
+
+<!-- 010-introduccion.md -->
 
 <h1>DistoX + TopoDroid</h1>
 <p>Luis Iglesias - Espeleoclub Aradelas - Vigo</p>
 <p>Versión 0.85 - Octubre 2018</p>
-<div><img height="200" width="200" alt="Imagen" src="img/topoDroidTransparente.png"/></div>
+<img height="200" width="200" alt="Imagen" src="img/topoDroidTransparente.png"/>
 <p>Este es un pequeño documento en el que intentaremos dar una idea general tanto del dispositivo <strong>DistoX</strong> como de la aplicación <strong>TopoDroid</strong> y mostrar un esquema de funcionamiento para elaborar topografías utilizándolos conjuntamente.</p>
 <p>No es, ni pretende ser, un manual exhaustivo. Para conocer a fondo las posibilidades tanto del DistoX como de TopoDroid recomendamos acudir a guías de referencia.</p>
 <p>Sí se aconseja <strong>leer de principio a fin todo este documento, sin saltarse contenido</strong>, para tener los ajustes recomendados y que sea más fácil seguir el desarrollo de la guía. Posteriormente el usuario podrá realizar los cambios que considere.</p>
+<p>La última versión de este libro está en https://github.com/luigli/ManualTopografia/raw/master/epub/DistoX-TopoDroid.epub</p>
+
+
+<!-- 020-entorno.md -->
+
 <h1>Entorno de trabajo</h1>
 <p>Este documento ha sido elaborado con</p>
 <ul>
@@ -28,11 +36,19 @@
 </ul>
 </li>
 </ul>
+
+
+<!-- 030-glosario.md -->
+
 <h1>Glosario</h1>
-<p><strong>Estación</strong>: Cada uno de los puntos base que se establecen en la topografía. Desde cada estación se hacen mediciones radiales y también se hacen mediciones que unen estaciones.</p>
-<p><strong>Estación activa</strong>: Es la estación desde la que se va a tomar la medición actual. Hay que recordar que ni DistoX ni TopoDroid tienen forma de saber automáticamente desde qué punto (estación) se está tomando la medida. Hay métodos como el del triple-disparo que pueden ayudar. Pero si no lo empleamos, entonces deberíamos indicar manualmente cuál es la estación [desde] y la estación [hasta] de cada toma.</p>
-<p><strong>Visual</strong>: Llamamos visual a la medición que hacemos de una estación a otra estación.</p>
-<p><strong>Radial</strong>: Llamamos radial a cada una de las mediciones que hacemos desde una estación hacia paredes, techos u otros puntos de interés a nuestro alrededor.</p>
+<p><strong>Estación</strong>: <span id="fnEstacion"/>Cada uno de los puntos base que se establecen en la topografía. Desde cada estación se hacen mediciones radiales y también se hacen mediciones que unen estaciones.</p>
+<p><strong>Estación activa</strong>: <span id="fnEstacionActiva"/>Es la estación desde la que se va a tomar la medición actual. Hay que recordar que ni DistoX ni TopoDroid tienen forma de saber automáticamente desde qué punto (estación) se está tomando la medida. Hay métodos como el del triple-disparo que pueden ayudar. Pero si no lo empleamos, entonces deberíamos indicar manualmente cuál es la estación [desde] y la estación [hasta] de cada toma.</p>
+<p><strong>Visual</strong>: <span id="fnVisual"/>Llamamos visual a la medición que hacemos de una estación a otra estación.</p>
+<p><strong>Radial</strong>: <span id="fnRadial"/>Llamamos radial a cada una de las mediciones que hacemos desde una estación hacia paredes, techos u otros puntos de interés a nuestro alrededor.</p>
+
+
+<!-- 040-teclas.md -->
+
 <h1>Teclas del DistoX</h1>
 <p>A continuación se hace una referencia rápida de las teclas del DistoX que vamos a usar en esta guía. En algunos casos se podrá encontrar más adelante una descripción de las funciones con mayor detalle.</p>
 <table>
@@ -61,7 +77,7 @@
 </tr>
 </tbody>
 </table>
-<p>Las siguientes combinaciones de teclas deben mantenerse pulsadas <strong>durante 2 segundos</strong> hasta que suene un pitido y se active la función.</p>
+<p><span id="combinaciones2segundos"/>Las siguientes combinaciones de teclas deben mantenerse pulsadas <strong>durante 2 segundos</strong> hasta que suene un pitido y se active la función.</p>
 <table>
 <thead>
 <tr>
@@ -112,8 +128,16 @@
 </tr>
 </tbody>
 </table>
+
+
+<!-- 050-reseteo.md -->
+
 <h1>Reseteo de fábrica</h1>
 <p>Para hacer un reseteo completo se deben pulsar las teclas <img src="img/teclaFunc.png" alt="img" /> + <img src="img/teclaOff.png" alt="img" /> + <img src="img/teclaUnits.png" alt="img" /> durante 5 segundos. Esto implica el borrado de la memoria de las mediciones, volver los ajustes a las opciones de fábrica y anular la calibración.</p>
+
+
+<!-- 060-pantalla.md -->
+
 <h2>Pantalla del DistoX</h2>
 <p>Elementos que debemos tener en cuenta en la pantalla de nuestro DistoX.</p>
 <h3><span id="PuntoDeReferencia"/> Punto de referencia de medición</h3>
@@ -142,6 +166,10 @@ Para activar / desactivar el modo silencioso pulsaremos al mismo tiempo las tecl
 <h3>Distancia al objeto marcado por el puntero</h3>
 <p>Cada vez que el Disto hace una medición, muestra en la parte inferior de la pantalla la distancia al objeto seleccionado. Hay que tener en cuenta que mientras el puntero láser está encendido no indica la distancia y en esa parte de la pantalla aparecerán 3 rayas horizontales. El valor de distancia tras la última medición, según se muestra en la pantalla adjunta, es de 4,345 metros.</p>
 <p><img src="img/distancia.png" alt="img" /></p>
+
+
+<!-- 070-config-distox.md -->
+
 <h1>Configuración de DistoX</h1>
 <p>El primer requisito para utilizar el DistoX con garantías es tenerlo calibrado. Se recomienda hacerlo al menos después de un cambio de pilas, cuando se actualiza el firmware o cada cierto tiempo. Se ha comprobado que incluso una ligera rotación interna de las pilas en el zócalo del DistoX afecta a la brújula. Por eso lo recomendable sería intentar fijarlas y hacer una calibración antes de cada sesión de topografía (es un proceso que lleva unos 10 minutos).</p>
 <p>Hay varios manuales en los que se detalla esta operación; aquí veremos la calibración desde la aplicación TopoDroid.</p>
@@ -149,7 +177,7 @@ Para activar / desactivar el modo silencioso pulsaremos al mismo tiempo las tecl
 <p>El Disto ofrece la posibilidad de hacer mediciones más precisas eliminando el efecto de vibración de la mano cuando pulsamos la tecla de disparo. Esto se consigue con el disparo retardado. Veamos como se configura:</p>
 <h3>Configuración del tiempo de retardo</h3>
 <p>Con el Disto encendido pulsamos <img src="img/teclaOff.png" alt="img" /> para asegurarnos de que el láser está apagado. A continuación pulsamos <img src="img/teclaTimer.png" alt="img" /> y en la parte inferior de la pantalla veremos el tiempo de retardo configurado, que por defecto es de 5 segundos. Para cambiar este valor usaremos las teclas <img src="img/teclaMas.png" alt="img" /> y <img src="img/teclaMenos.png" alt="img" />. Aconsejamos pulsar dos veces la tecla <img src="img/teclaMenos.png" alt="img" /> para reducirlo a 3 segundos, que es un valor suficiente. Pulsamos <img src="img/teclaOff.png" alt="img" /> para salir de la configuración.</p>
-<h3>Efectuar disparos con retardo</h3>
+<h3><span id="fnConRetardo"/>Efectuar disparos con retardo</h3>
 <p>Si ahora queremos hacer una medición con retardo encendemos el puntero láser (pulsando <img src="img/teclaOn.png" alt="img" />) y en vez de disparar pulsando de nuevo <img src="img/teclaOn.png" alt="img" /> en este caso pulsamos <img src="img/teclaTimer.png" alt="img" />. Ahora se iniciará la cuenta atrás, emitiendo un pitido por segundo, durante la que tendremos que mantener el puntero en el objetivo. Sabremos que se ha hecho la medición cuando se apaga el puntero al final de la cuenta atrás.</p>
 <h2><span id="fnModoTripleDisparo"/>Modo triple disparo</h2>
 <p>Este modo tiene ciertas ventajas para facilitar el trabajo y hacerlo más preciso. A continuación daremos los detalles.
@@ -161,6 +189,10 @@ Sabremos que está activado si vemos un triángulo en la parte inferior izquierd
 <p><img src="img/IndicadorTripleDisparo.png" alt="img" /></p>
 <p>Este sistema sirve para asegurarnos de que la medición entre estaciones tiene la suficiente precisión, ya que si al realizar el tercer disparo no hace el doble pitido ni muestra las 3 líneas verticales eso quiere decir que la toma no ha sido correcta y deberemos descartarla, teniendo que volver a realizar los 3 disparos consecutivos desde la estación actual a la siguiente.</p>
 <p>Otra consecuencia derivada de un triple disparo correcto es que, a continuación, la estación activa pasará a ser automáticamente aquella a la que hemos hecho el disparo. De esta forma nos facilita la labor ya que no tenemos que cambiar nosotros a mano la estación activa. Todo esto lo veremos más adelante cuando expliquemos el método de trabajo.</p>
+
+
+<!-- 080-config-topodroid.md -->
+
 <h1>Configuración de TopoDroid</h1>
 <h2>Emparejar por Bluetooth con DistoX</h2>
 <p>Es imprescindible la conexión Bluetooth entre TopoDroid y DistoX, ya que es el canal por el que se transfieren los datos. El emparejamiento se puede hacer desde el menú [<strong>Ajustes</strong>] de Android o desde el menú DistoX de TopoDroid. En cualquier caso la contraseña de emparejamiento es 0000.</p>
@@ -170,7 +202,7 @@ Sabremos que está activado si vemos un triángulo en la parte inferior izquierd
 <p><img src="img/TD_AjustesBT.png" alt="img" /></p>
 <p>Una vez emparejado no hará falta que volvamos a este menú cada vez. Si el Bluetooth está encendido, se restablecerá la conexión automáticamente al usar TopoDroid.</p>
 <h2>Ajustes recomendados de TopoDroid</h2>
-<p>Para acceder a los ajustes generales, desde la pantalla principal pulsamos <strong>3puntos</strong> &gt; Ajustes <div><img src="img/TD_Ajustes.png" alt="img" /> para que se abra el panel de ajustes generales</p>
+<p>Para acceder a los ajustes generales, desde la pantalla principal pulsamos <strong>3puntos</strong> &gt; Ajustes <img src="img/TD_Ajustes.png" alt="img" /> para que se abra el panel de ajustes generales</p>
 <h3>Nivel de la interfaz de usuario</h3>
 <p>TopoDroid da la posibilidad de trabajar con niveles de usuario desde <strong>Básico</strong> hasta
 <strong>Experto</strong>. El nivel <strong>Básico</strong> es el que viene por defecto y no permite todas las opciones que vamos a utilizar en este manual, así que dentro del panel de ajustes que acabamos de abrir entraremos en la opción <strong>Nivel de usuario</strong> y lo cambiaremos a <strong>Experto</strong>. La razón es que solamente en modo <strong>Experto</strong> se permiten hacer secciones transversales en una estación; una función que veremos más adelante. En cualquier caso, en nuestra opinión es mejor tener todas las funciones disponibles e ir usándolas según vayamos aprendiendo.</p>
@@ -179,6 +211,163 @@ Sabremos que está activado si vemos un triángulo en la parte inferior izquierd
 <p><img src="img/TD_AyudaMenu.png" alt="img" /></p>
 <p>Si pulsamos sobre el <strong>libro</strong> (señalado en rojo) detallará un poco más la información.</p>
 <p><img src="img/TD_Ayuda.png" alt="img" /></p>
+
+
+<!-- 090-flujo-trabajo.md -->
+
+<h1>Flujo de trabajo para realizar una topografía</h1>
+<p>Hay varios métodos posibles para topografiar. Vamos a centrarnos en uno de ellos y examinaremos las ventajas que tiene para trabajar de forma más eficiente.</p>
+<p>Se basa en hacer las mediciones con cierto orden y en cumplir ciertos requisitos. Lo que se propone es que, al llegar a cada <a href="#fnEstacion">estación</a> se tomarán en primer lugar las radiales y la última medida que se tomará será hacia la siguiente estación.</p>
+<p>En este método de trabajo se propone configurar el DistoX en <a href="#fnModoTripleDisparo">modo triple-disparo</a> para distinguir una medición radial de una visual entre estaciones.</p>
+<p>Después de haber configurado DistoX y TopoDroid según hemos indicado en la parte previa de este documento, procederemos a indicar cómo realizar nuestra primera topografía.</p>
+<h2>Nueva topografía</h2>
+<p>Para crear una nueva topografía, en la pantalla principal pulsamos el botón <img src="img/TD_BotonMas.png" alt="img" /> y nos aparece el formulario de datos <img src="img/nuevaTopo.png" alt="img" /></p>
+<p>El primer dato a cubrir es el nombre de la cavidad. Si la fecha de la topo es distinta a la actual, pulsaremos en la fecha para cambiarla. A continuación cubriremos el nombre del autor o autores de la topo. El siguiente campo es el nombre de la primera estación. Con esos datos cubiertos ya podemos pulsar <strong>Abrir</strong> para que guarde la topo y la abra en la aplicación.
+Después de pulsar <strong>Abrir</strong> deberíamos ver la pantalla de topografía de TopoDroid, cuyo encabezado tiene este aspecto <img src="img/encabezadoTopo.png" alt="img" /></p>
+<h2>Ajustar el modo de visualización</h2>
+<p>Recomendamos al principio ver todas las mediciones tomadas incluyendo la numeración de las tomas. Para ello pulsaremos el botón <img src="img/TD_AjustesVisualizacion.png" alt="img" /> y marcaremos todas las opciones. Posteriormente, al finalizar este manual, el usuario puede cambiar estos ajustes.</p>
+<h2>Toma de datos en DistoX</h2>
+<p>Tal como hemos indicado el sistema implícito de trabajo es, por cada estación, medir primero las radiales y finalmente hacer la medición a la siguiente estación. En este punto se supone que estamos en la primera estación (numerada como <strong>0</strong> o como le hayamos indicado en el formulario de <strong>Nueva cavidad</strong>)
+Si hemos estado haciendo mediciones de prueba con el Disto, en la parte superior derecha veremos el número de tomas realizadas. En este momento debemos limpiar esa memoria. Tal como se ha <a href="#combinaciones2segundos">indicado anteriormente</a>, la combinación de teclas es <img src="img/teclaOff.png" alt="img" /> + <img src="img/teclaUnits.png" alt="img" /> durante 2 segundos. Ahora deberíamos ver en blanco la parte superior derecha.
+Siguiendo un caso hipotético tomaremos 3 radiales con nuestro DistoX. Al terminar veremos en el Disto una pantalla parecida a esta, en la que vemos los datos de la última medición, pero lo importante es que en la parte superior derecha tenemos el número de datos pendientes de enviar a TopoDroid. En este caso 3</p>
+<p><img src="img/tomaInicial.jpg" alt="img" /></p>
+<h3>Descargar datos de DistoX a TopoDroid</h3>
+<p>Para descargar datos pulsamos el botón <img src="img/TD_DescargarDatos.jpg" alt="img" /> y se realizará la transferencia, con lo que en nuestra pantalla veremos algo así</p>
+<p><img src="img/datosTransferidos1.png" alt="img" /></p>
+<p>El aspecto puede variar dependiendo del tamaño de la pantalla y ajustes como el tamaño del texto. Los 6 datos que vemos aquí son:</p>
+<ol>
+<li>El número de toma (la secuencia de orden en que se ha tomado cada punto)</li>
+<li>La estación desde la que se ha tomado el punto. En este caso todos se han tomado desde la estación 0</li>
+<li>La distancia, rumbo e inclinación al punto objetivo</li>
+<li>Entre corchetes indica la referencia con respecto a la dirección (izquierda, derecha o vertical)</li>
+</ol>
+
+
+<!-- 100-ver-croquis.md -->
+
+<h2>Visualizar el croquis</h2>
+<p>Para ir a la parte gráfica pulsaremos <img src="img/TD_BotonCroquis.png" alt="img" /> y la primera vez nos aparecerá la pantalla</p>
+<p><img src="img/TD_NuevoDibujo.png" alt="img" /></p>
+<p>Pulsaremos [Nuevo croquis] y veremos</p>
+<p><img src="img/TD_NuevoCroquis.png" alt="img" /></p>
+<p>en donde nos piden un nombre para el croquis (por defecto 1) y el número de la estación en la que se basa. Esto se hace porque, según la complejidad de la cavidad, podría ser conveniente tener un croquis distinto por cada estación. Si la cavidad no tiene demasiado desarrollo podría bastar con un solo croquis para representarla en su totalidad.</p>
+<p>De ahora en adelante, cada vez que volvamos a pulsar <img src="img/TD_BotonCroquis.png" alt="img" /> para ir a la parte gráfica, tendremos opción de seleccionar alguna de las plantas o alzados ya creados o volver a pulsar <strong>[Nuevo croquis]</strong> si queremos crear un croquis basado en otra estación.</p>
+<p>Al pulsar <strong>[Ok]</strong> llegaremos a ver el croquis</p>
+<p><img src="img/TD_Croquis01.png" alt="img" /></p>
+<p>Según el caso, podríamos querer cambiar el tamaño del texto de la estación o el grosor de la línea. Iremos, en la parte superior derecha del menú, a <strong>3Puntos</strong> &gt; <strong>Ajustes</strong> &gt; <strong>Ajustes de pantalla de croquis</strong> y ahí tenemos, entre otras, las opciones <strong>Grosor de la línea de topografía</strong> y <strong>Tamaño de la etiqueta de la estación</strong>.</p>
+<p>En el menú de dibujo también tenemos el botón <img src="img/TD_AjustesVisualizacion.png" alt="img" /> para indicar qué elementos queremos ver/ocultar</p>
+<h2>Edición en la pantalla de dibujo</h2>
+<p>Hay 3 acciones principales que se pueden hacer en la pantalla de dibujo, que se corresponden con los 3 primeros iconos (en verde) del menú de dibujo</p>
+<ul>
+<li>Dibujar <img src="img/TD_Dibujar.png" alt="img" /></li>
+<li>Borrar <img src="img/TD_Borrar.png" alt="img" /></li>
+<li>Editar <img src="img/TD_Editar.png" alt="img" /> (modificar las propiedades de los elementos ya dibujados)</li>
+</ul>
+<p>Activamos alguna de estas 3 actividades pulsando sobre su botón correspondiente y sabremos que está activa porque tiene un color más vivo que las otras dos restantes.</p>
+<p>Si está activa alguna de estas 3 acciones y lo que queremos es desplazarnos o hacer zoom en el dibujo tenemos 2 opciones</p>
+<ul>
+<li>Desplazar el croquis por la pantalla usando 2 dedos a la vez</li>
+<li>Pulsar sobre la acción activa de forma que las 3 acciones queden desactivadas (las 3 en color verde pálido) y ya podremos desplazar el dibujo arrastrando con un solo dedo</li>
+</ul>
+<h3>Acción de dibujar <img src="img/TD_Dibujar.png" alt="img" /></h3>
+<p>Tenemos 3 tipos de elementos para dibujar: puntos, líneas y áreas. Previamente recomendamos ir al menú <strong>3Puntos</strong> &gt; <strong>Simbología</strong> para marcar y desmarcar elementos dentro de estas 3 categorías de forma que queden activos solamente aquellos que estimamos que vamos a utilizar.</p>
+<p>Al pulsar el botón de dibujar, este se pondrá de un color verde luminoso y en la parte superior de la pantalla mostrará el tipo de elemento activo para dibujar. En la pantalla de ejemplo, el elemento activo es [<strong>Línea Pared</strong>]</p>
+<p><img src="img/TD_MenuDibujar.png" alt="img" /></p>
+<p>Si queremos dibujar un elemento distinto pulsaremos <img src="img/TD_BotonSimbolo.png" alt="img" /> para que se nos abra la ventana de selección. Tener en cuenta que en el caso de elementos puntuales, además del propio símbolo (por ejemplo, corriente de aire) se puede seleccionar su tamaño y en algunos casos la dirección en la que apunta.</p>
+<p>Para opciones relacionadas con elementos puntuales iremos a <strong>3Puntos</strong> &gt; <strong>Ajustes</strong> &gt; <strong>Ajustes de puntos</strong> y ahí nos encontraremos</p>
+<ul>
+<li><strong>Símbolos de punto sin zoom</strong>: si está marcado, el tamaño del símbolo sigue siendo el mismo aunque varíe el zoom en la pantalla de dibujo</li>
+<li><strong>Tamaño de los símbolos</strong></li>
+<li><strong>Tamaño del texto</strong>: se emplea al dibujar <strong>textos</strong>, que son uno de los elementos puntuales disponibles</li>
+</ul>
+<p>Para opciones relacionadas con elementos lineales iremos a <strong>3Puntos</strong> &gt; <strong>Ajustes</strong> &gt; <strong>Ajustes de línea</strong> y de entre las opciones disponibles tenemos la del <strong>Grosor de la línea</strong>.</p>
+<p>Al igual que en muchas otras aplicaciones, también tenemos los botones deshacer y rehacer <img src="img/TD_DeshacerRehacer.png" alt="img" /> para dar marcha atrás o volver hacia adelante en las últimas acciones realizadas.</p>
+<h3>Acción de borrado <img src="img/TD_Borrar.png" alt="img" /></h3>
+<p>En la acción de borrar tenemos 2 nuevos botones</p>
+<ul>
+<li><img src="img/TD_TipoElementoABorrar.png" alt="img" /> Al pulsarlo nos muestra la siguiente lista <img src="img/TD_ListaelementosBorrar.png" alt="img" />. Según lo que marquemos cambiará el icono en pantalla y actuará como filtro, de forma que si por ejemplo seleccionamos <strong>Borrar puntos</strong>, cuando pasemos el dedo por encima de líneas o áreas, éstas no se borrarán.</li>
+<li><img src="img/TD_RadioAccionBorrado.png" alt="img" />: radio de acción del borrado. Cada vez que lo pulsemos cambiará el icono entre 3 posiciones: desde un radio más pequeño (más precisión) hasta un radio más grande.</li>
+</ul>
+<h3>Acción de editar <img src="img/TD_Editar.png" alt="img" /></h3>
+<p>Esta opción sirve para modificar ciertos aspectos de los elementos ya dibujados. Por ejemplo desplazar un vértice de alguna línea / área o cambiar el tamaño / orientación de elementos puntuales. En esta acción primero seleccionamos el elemento a editar y luego podemos pulsar el botón <img src="img/TD_PropiedadesEditar.png" alt="img" /> que nos mostrará un panel con las propiedades que podemos modificar.</p>
+
+
+<!-- 110-cambio-estacion.md -->
+
+<h2>Cambio de estación base</h2>
+<p>Recapitulando, hasta ahora hemos tomado 3 radiales con el DistoX 3 desde la estación inicial (en este caso estación 0). Ahora vamos a cambiar de estación base. Para ello ya hemos comentado anteriormente que debemos <a href="#fnModoTripleDisparo">configurar el DistoX en modo triple-disparo</a> y cómo debemos <a href="#DescripcionTripleDisparo">realizar el triple-disparo</a> para hacer la visual a la siguiente estación.
+Por tanto realizaremos un triple disparo entre la estación actual y la siguiente. Si no lo conseguimos, aconsejamos <a href="#BorrarPuntosNoEnviados">borrar la memoria de mediciones pendientes</a> de enviar tal como también hemos explicado. De esta forma evitamos pasar a TopoDroid mediciones inválidas que pueden confundirnos. Recordamos que para facilitar una medición precisa puede ser útil el disparo retardado con <a href="#fnConRetardo">Timer</a>, que ya hemos visto.
+Si estamos en la pantalla de dibujo volveremos atrás a la pantalla de lista de mediciones y allí pulsamos otra vez el botón <img src="img/TD_DescargarDatos.jpg" alt="img" /> para descargar lo pendiente, que en este caso será el triple disparo del cambio de estación. Una vez que termina el volcado la lista de mediciones será algo parecido a:</p>
+<p><img src="img/TD_listaPuntos02.png" alt="img" /></p>
+<p>En la línea 4 vemos que automáticamente, al haber hecho un triple disparo, lo ha interpretado como una visual desde la estación 0 a la estación 1. Las líneas 5 y 6 son parte del triple disparo (vemos que sus valores son muy parecidos al primer disparo de la línea 4). Como son valores redundantes no tienen número de estación, ni de partida ni de llegada. Realmente no es muy útil visualizar las líneas 5 y 6. Podemos ocultarlas pulsando <img src="img/TD_AjustesVisualizacion.png" alt="img" /> y desmarcando la línea <strong>Visualizar tomas repetidas</strong>.</p>
+<p>Como consecuencia del triple disparo ahora la estación activa es la 1. Por tanto nos desplazaremos con el <strong>Disto</strong> a la estación 1 para hacer las radiales desde ahí.
+Y así continuaría el bucle de trabajo, que básicamente consiste en hacer mediciones con Disto, pasarlas a TopoDroid, comprobar que han llegado en la pantalla de mediciones de <strong>TopoDroid</strong> y pasar a la pantalla de <strong>croquis</strong> para complementar la topo con elementos gráficos: puntos, líneas, áreas.</p>
+
+
+<!-- 120-casos-rompe-flujo.md -->
+
+<h2>Casos en los que se rompe el bucle de trabajo</h2>
+<p>Imaginemos que estamos tomando las radiales de la estación 1 y en ese momento nos damos cuenta de que nos falta una radial de la estación 0 ¿Cómo solucionarlo?</p>
+<h3>Cambiar datos de una medición</h3>
+<p>La solución que proponemos es ir a la estación <strong>0</strong>, hacer la medición y transferirla a TopoDroid. Una vez que la veamos en la lista de mediciones pulsaremos en esa línea <strong>encima de la longitud o el rumbo</strong> y se abrirá el panel de edición de la toma</p>
+<p><img src="img/TD_EditarMedicion.png" alt="img" /></p>
+<p>De este panel, lo que nos interesa ahora son las zonas marcadas con círculos rojos, que corresponden a la estación origen y la estación destino. En este caso, como es una radial, solo tiene estación origen y la estación destino está vacía. En la estación origen vemos el valor 1. Cambiaremos ese 1 por un 0, pulsamos <strong>[Ok]</strong> y habremos arreglado el problema, ya que comprobaremos en la lista de mediciones que esa medición ahora aparece realizada desde la estación <strong>0</strong>.</p>
+<h3>Cierre de poligonal</h3>
+<p>La solución anterior también es útil en el cierre de una poligonal. Imaginemos que establecemos una poligonal con las estaciones 4, 5, 6, 7 y 8. Para finalizar haremos un triple disparo desde la 8 hacia la 4 para cerrarla. Pero como el triple disparo lo que hace automáticamente es incrementar el número de estación, al volcar a TopoDroid veremos que la visual se ha establecido desde la 8 hacia la 9. Editaremos ese punto tal como hicimos en el caso anterior y cambiaremos el 9 por el 4 para cerrar la poligonal.</p>
+
+
+<!-- 130-secciones-transversales.md -->
+
+<h2>Secciones transversales</h2>
+<p>En TopoDroid podemos realizar 2 tipos de secciones transversales</p>
+<ul>
+<li>Situada en una estación</li>
+<li>Situada en cualquier tramo de la galería</li>
+</ul>
+<h3>Sección transversal en una estación</h3>
+<p>Si queremos aportar a la topo un croquis de sección transversal situado exactamente en una estación, esto se hace desde la ventana de croquis de la planta. Ahí nos pondremos en <strong>modo edición</strong> (pulsando el botón <img src="img/TD_Editar.png" alt="img" />). Para facilitar la selección de la estación podemos filtrar de forma que solo se puedan seleccionar estaciones. Para ello haremos como mostramos en la siguiente pantalla</p>
+<p><img src="img/FiltrarEdicionEstacion.png" alt="img" /></p>
+<p>A continuación seleccionaremos la estación sobre la que queremos realizar la sección. En nuestro ejemplo hemos marcado la estación <strong>2</strong>. Sabremos que está seleccionada porque hay un pequeño punto brillante en la esquina inferior izquierda del nombre de la estación y en la parte superior de la aplicación aparece el texto <strong>Editar estación 2</strong></p>
+<p><img src="img/EditarEstacion2.png" alt="img" /></p>
+<p>El siguiente paso es pulsar el botón de <strong>Propiedades</strong> <img src="img/TD_PropiedadesEditar.png" alt="img" />. En el caso de una estación, si tenemos los ajustes de TopoDroid que hemos recomendado a lo largo de esta guía, veremos algo como esto</p>
+<p><img src="img/CrearSeccion2.png" alt="img" /></p>
+<p>Los botones <strong>1&gt;3</strong> y <strong>3&gt;1</strong> son para seleccionar si la sección que queremos dibujar está orientada en dirección <strong>estación 1 a estación 3</strong> o <strong>estación 3 a estación 1</strong>. En este caso escogeremos <strong>1&gt;3</strong> y se abrirá la ventana de croquis de la sección</p>
+<p><img src="img/croquisSeccion2.png" alt="img" /></p>
+<p>En la ventana precedente hemos destacado el último botón de la derecha, que sirve para mostrar/ocultar las radiales trazadas desde la estación. El hacerlas visibles generalmente nos ayudará a dibujar la sección. La cuadrícula de fondo, con cuadrados de 1 metro de lado, también nos puede ayudar con las dimensiones de nuestro croquis.</p>
+<h3>Sección transversal en un tramo de la galería</h3>
+<p>Para trazar la sección de un punto cualquiera de la galería tenemos que dibujar un tipo de línea especial llamado <strong>sección</strong></p>
+<p><img src="img/lineaSeccion.png" alt="img" /></p>
+<p>Podemos ver en la siguiente pantalla una línea de sección trazada en la galería entre las estaciones 2 y 3</p>
+<p><img src="img/secciontrazada.png" alt="img" /></p>
+<p>Inmediatamente después de trazar la línea de sección nos aparece la ventana de propiedades</p>
+<p><img src="img/propiedadesSeccion.png" alt="img" /></p>
+<p>pulsaremos el icono de <strong>croquis</strong> <img src="img/TD_BotonCroquis.png" alt="img" /> para dibujar la sección.
+Tener en cuenta que en este caso el botón <img src="img/Boton_Radiales.png" alt="img" /> sirve para alternar entre mostrar las radiales de la estación precedente, de la estación siguiente, mostrar ambas y ocultar ambas.
+Si queremos ver o modificar la sección transversal posteriormente, tendremos que pasar al modo <strong>editar</strong> <img src="img/TD_Editar.png" alt="img" />, seleccionar la <strong>línea de sección</strong> y pulsar el botón <strong>propiedades</strong> <img src="img/TD_PropiedadesEditar.png" alt="img" />. En esa ventana pulsaremos el botón de <strong>croquis</strong> <img src="img/TD_BotonCroquis.png" alt="img" />, como ya hicimos cuando creamos la línea de sección.</p>
+
+
+<!-- 140-croquis-alzado-desarrollado.md -->
+
+<h2>Croquis de alzado desarrollado</h2>
+<p>Antes de poder croquizar el alzado desarrollado debemos tener en cuenta que todas las visuales de estaciones tengan asignado correctamente el valor de <strong>extensión</strong>. Ese valor nos indica la posición relativa entre ambas estaciones. Por poner un ejemplo sencillo, si en el alzado desarrollado la estación que queremos ver más a la izquierda es la <strong>1</strong> y la que queremos ver más a la derecha es la <strong>3</strong>, entonces la visual 1-2 debería tener la extensión <strong>[&gt;]</strong> y la visual 2-3 debería tener también la extensión <strong>[&gt;]</strong> (El valor <strong>[&gt;]</strong> significa que la segunda estación está más a la <strong>derecha</strong> que la primera. El valor <strong>[&lt;]</strong> significa que la segunda estación está más a la <strong>izquierda</strong> que la primera)</p>
+<p>Como ejemplo, en la pantalla siguiente vemos que la visual de la estación 3 a la 4 tiene extensión <strong>derecha</strong></p>
+<p><img src="img/visual34.png" alt="img" /></p>
+<p>Para modificar la extensión seleccionamos esa visual <strong>encima de la longitud o el rumbo</strong> y se abrirá la ventana de edición:</p>
+<p><img src="img/seleccionExtencionEstacion.png" alt="img" /></p>
+<p>Vemos que está marcado el valor <strong>Drch</strong>. Si queremos cambiarlo a <strong>extensión izquierda</strong> marcaríamos la casilla <strong>Izq.</strong> y pulsaríamos el botón <strong>[Ok]</strong>. Esto tendría como consecuencia que en el croquis de alzado desarrollado la estación <strong>4</strong> aparecería a la izquierda de la estación <strong>3</strong>.
+Como conclusión, la norma que debemos recordar es que, para que aparezcan en el croquis de alzado desarrollado, todas las visuales entre estaciones deben tener un valor de <strong>extensión</strong>, sea <strong>[&gt;]</strong> o <strong>[&lt;]</strong>, ya que si hay visuales sin <strong>extensión</strong>, esas estaciones no serán visibles en el croquis.</p>
+<p>Podemos pasar rápidamente de la planta al alzado y viceversa usando los botones <img src="img/BotonPlanta.png" alt="img" /> y <img src="img/BotonAlzado.png" alt="img" /> que veremos en la parte superior derecha de los croquis de planta y alzado.</p>
+
+
+<!-- 150-introd-manual-mediciones.md -->
+
+<h2>Introducción manual de mediciones</h2>
+<p>Hasta ahora, a lo largo de esta guía, hemos introducido datos en TopoDroid mediante las mediciones realizadas con nuestro DistoX. Quizá interese saber que también podemos introducir mediciones de forma manual directamente en TopoDroid. Una de las razones para hacerlo podría ser aprender a utilizar la aplicación cuando no tenemos el Disto a mano o para introducir valores específicos.
+Para hacerlo pulsamos el botón <strong>[+]</strong> en la lista de mediciones</p>
+<p><img src="img/puntosManuales.png" alt="img" /></p>
+<p>En la ventana que se abre a continuación podemos introducir la estación desde, estación hasta. En la segunda fila la distancia, rumbo e inclinación. En la tercera fila incluso podemos indicar la distancia a nuestra izquierda, derecha, encima y debajo:</p>
+<p><img src="img/datosTomaManual.png" alt="img" /></p>
+<p>Al pulsar <strong>[Ok]</strong> esa medición se visualizará en la lista de mediciones.</p>
 
 
 </body></html>

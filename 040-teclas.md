@@ -10,7 +10,7 @@ A continuación se hace una referencia rápida de las teclas del DistoX que vamo
 | ![img](img/teclaFunc.png)|Estado del dispositivo: nivel de carga de las pilas, versiones de hardware y firmware instaladas, nivel de iluminación de la pantalla. Se sale de esta pantalla con ![img](img/teclaOff.png) |
 | ![img](img/teclaTimer.png) | Configura el disparo retardado en el tiempo. Esto puede ser útil para realizar tomas más precisas al evitar la vibración del dedo cuando se ejecuta la medición|
   
-Las siguientes combinaciones de teclas deben mantenerse pulsadas **durante 2 segundos** hasta que suene un pitido y se active la función.
+<span id="combinaciones2segundos"/>Las siguientes combinaciones de teclas deben mantenerse pulsadas **durante 2 segundos** hasta que suene un pitido y se active la función.
 
 |Combinación&nbsp;de&nbsp;teclas|Función|
 |---|---|

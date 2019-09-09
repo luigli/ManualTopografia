@@ -15,7 +15,7 @@ Una vez emparejado no hará falta que volvamos a este menú cada vez. Si el Blue
 
 ## Ajustes recomendados de TopoDroid
 
-Para acceder a los ajustes generales, desde la pantalla principal pulsamos **3puntos** > Ajustes <div>![img](img/TD_Ajustes.png) para que se abra el panel de ajustes generales
+Para acceder a los ajustes generales, desde la pantalla principal pulsamos **3puntos** > Ajustes ![img](img/TD_Ajustes.png) para que se abra el panel de ajustes generales
 
 ### Nivel de la interfaz de usuario
 

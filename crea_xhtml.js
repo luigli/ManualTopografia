@@ -1,4 +1,7 @@
 const fs = require('fs');
+const path = require('path');
+const ABSPATH = path.dirname(process.mainModule.filename); // Absolute path to our app directory
+const NO_USAR = ['README.md', 'OtroFicheroExcluido.md'];
 
 var md = require('/Users/lfigl/AppData/Roaming/npm/node_modules/markdown-it')({
     html:         true,        // Enable HTML tags in source
@@ -6,16 +9,18 @@ var md = require('/Users/lfigl/AppData/Roaming/npm/node_modules/markdown-it')({
     });
   
 fo = fs.openSync('xhtml/manual.xhtml', 'w');
-fs.appendFileSync(fo, "<?xml version='1.0' encoding='utf-8'?>\n<html xmlns='http://www.w3.org/1999/xhtml' lang='es' xml:lang='es'>\n<head>\n\t<link href='styles.css' rel='stylesheet' type='text/css'/>\n\t<title>DistoX + TopoDroid</title>\n</head>\n<body>\n\n");
+s = fs.readFileSync('xhtml/cabecera.xhtml', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
 
-s = fs.readFileSync('010-introduccion.md', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
-s = fs.readFileSync('020-entorno.md', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
-s = fs.readFileSync('030-glosario.md', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
-s = fs.readFileSync('040-teclas.md', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
-s = fs.readFileSync('050-reseteo.md', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
-s = fs.readFileSync('060-pantalla.md', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
-s = fs.readFileSync('070-config-distox.md', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
-s = fs.readFileSync('080-config-topodroid.md', 'utf8'); o=md.render(s); fs.appendFileSync(fo, o);
+let files = fs.readdirSync(ABSPATH);
+files.forEach(f => {
+    if (f.endsWith(".md") && NO_USAR.indexOf(f) < 0){
+        s = fs.readFileSync(f, 'utf8');
+        o = md.render(s);
+        fs.appendFileSync(fo, '\n\n<!-- '+f+' -->\n\n');
+        fs.appendFileSync(fo, o);
+        console.log(f);
+    }
+});
 
 fs.appendFileSync(fo, "\n\n</body></html>\n");
 fs.closeSync(fo);

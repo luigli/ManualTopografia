@@ -60,9 +60,7 @@ Al igual que en muchas otras aplicaciones, también tenemos los botones deshacer
 ### Acción de borrado ![img](img/TD_Borrar.png) 
 En la acción de borrar tenemos 2 nuevos botones
 * ![img](img/TD_TipoElementoABorrar.png) Al pulsarlo nos muestra la siguiente lista ![img](img/TD_ListaelementosBorrar.png). Según lo que marquemos cambiará el icono en pantalla y actuará como filtro, de forma que si por ejemplo seleccionamos **Borrar puntos**, cuando pasemos el dedo por encima de líneas o áreas, éstas no se borrarán.
-* ![img](img/TD_RadioAccionBorrado.png): radio de acción del borrado. Cada vez que lo pulsemos cambiará el icono entre 3 posiciones: desde un radio más pequeño (más precisión) hasta un radio más grande.</li>
-</ul>
-
+* ![img](img/TD_RadioAccionBorrado.png): radio de acción del borrado. Cada vez que lo pulsemos cambiará el icono entre 3 posiciones: desde un radio más pequeño (más precisión) hasta un radio más grande.
 
 ### Acción de editar ![img](img/TD_Editar.png)
 Esta opción sirve para modificar ciertos aspectos de los elementos ya dibujados. Por ejemplo desplazar un vértice de alguna línea / área o cambiar el tamaño / orientación de elementos puntuales. En esta acción primero seleccionamos el elemento a editar y luego podemos pulsar el botón ![img](img/TD_PropiedadesEditar.png) que nos mostrará un panel con las propiedades que podemos modificar.

@@ -12,7 +12,7 @@ El Disto ofrece la posibilidad de hacer mediciones más precisas eliminando el e
 
 Con el Disto encendido pulsamos ![img](img/teclaOff.png) para asegurarnos de que el láser está apagado. A continuación pulsamos ![img](img/teclaTimer.png) y en la parte inferior de la pantalla veremos el tiempo de retardo configurado, que por defecto es de 5 segundos. Para cambiar este valor usaremos las teclas ![img](img/teclaMas.png) y ![img](img/teclaMenos.png). Aconsejamos pulsar dos veces la tecla ![img](img/teclaMenos.png) para reducirlo a 3 segundos, que es un valor suficiente. Pulsamos ![img](img/teclaOff.png) para salir de la configuración.
 
-### Efectuar disparos con retardo
+### <span id="fnConRetardo"/>Efectuar disparos con retardo
 
 Si ahora queremos hacer una medición con retardo encendemos el puntero láser (pulsando ![img](img/teclaOn.png)) y en vez de disparar pulsando de nuevo ![img](img/teclaOn.png) en este caso pulsamos ![img](img/teclaTimer.png). Ahora se iniciará la cuenta atrás, emitiendo un pitido por segundo, durante la que tendremos que mantener el puntero en el objetivo. Sabremos que se ha hecho la medición cuando se apaga el puntero al final de la cuenta atrás.
 
